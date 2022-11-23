@@ -5,9 +5,9 @@ import fr.eseo.twic.vrignaud.model.Ville;
 import java.util.ArrayList;
 
 public interface VilleDAO {
-    public ArrayList<Ville> trouverVille(String codePostal);
+    public ArrayList<Ville> trouverVille(String codeCommune);
     public String ajouterVille(Ville ville);
     public String modifierVille(Ville ville);
 
-    String supprimerVille(String codePostal);
+    String supprimerVille(String codeCommune);
 }

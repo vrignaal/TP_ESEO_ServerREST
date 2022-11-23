@@ -16,12 +16,12 @@ public class VilleBLOImpl
     private VilleDAO villeDAO;
 
     @Override
-    public ArrayList<Ville> getInfoVille(String codePostal) {
+    public ArrayList<Ville> getInfoVille(String codeCommune) {
         System.out.println(ConsoleColor.YELLOW);
         System.out.println("VilleBLOImpl.getInfoVille");
-        System.out.println("codePostal = " + codePostal + ConsoleColor.RESET);
+        System.out.println("codePostal = " + codeCommune + ConsoleColor.RESET);
 
-        return villeDAO.trouverVille(codePostal);
+        return villeDAO.trouverVille(codeCommune);
     }
 
     @Override
@@ -43,11 +43,11 @@ public class VilleBLOImpl
     }
 
     @Override
-    public String deleteVille(String codePostal) {
+    public String deleteVille(String codeCommune) {
         System.out.println(ConsoleColor.YELLOW);
         System.out.println("VilleBLOImpl.deleteVille");
-        System.out.println("codePostal = " + codePostal + ConsoleColor.RESET);
+        System.out.println("codePostal = " + codeCommune + ConsoleColor.RESET);
 
-        return villeDAO.supprimerVille(codePostal);
+        return villeDAO.supprimerVille(codeCommune);
     }
 }

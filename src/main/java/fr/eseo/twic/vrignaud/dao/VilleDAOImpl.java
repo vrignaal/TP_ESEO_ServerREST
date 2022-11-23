@@ -18,10 +18,10 @@ public class VilleDAOImpl
     ResultSet resultSet = null;
 
     @Override
-    public ArrayList<Ville> trouverVille(String codePostal) {
+    public ArrayList<Ville> trouverVille(String codeCommune) {
         System.out.println(ConsoleColor.PURPLE);
         System.out.println("VilleDAOImpl.trouverVille");
-        System.out.println("codePostal = " + codePostal);
+        System.out.println("codeCommune = " + codeCommune);
         ArrayList<Ville> villeArrayList = new ArrayList<Ville>();
 
         String query =
@@ -34,8 +34,8 @@ public class VilleDAOImpl
                     "`Longitude` " +
                 "FROM `ville_france`";
 
-        if(codePostal != null) {
-            query = query + " WHERE Code_postal = " + codePostal;
+        if(codeCommune != null) {
+            query = query + " WHERE Code_commune_INSEE = " + codeCommune;
         }
 
         System.out.println("query = " + query);
@@ -179,14 +179,14 @@ public class VilleDAOImpl
     }
 
     @Override
-    public String supprimerVille(String codePostal) {
+    public String supprimerVille(String codeCommune) {
         System.out.println(ConsoleColor.PURPLE);
         System.out.println("VilleDAOImpl.supprimerVille");
-        System.out.println("codePostal = " + codePostal);
+        System.out.println("codeCommune = " + codeCommune);
 
         String query =
                 "DELETE FROM `ville_france` " +
-                "WHERE `Code_postal` = '" + codePostal + "'";
+                "WHERE `Code_commune_INSEE` = '" + codeCommune + "'";
 
         System.out.println("query = " + query);
 

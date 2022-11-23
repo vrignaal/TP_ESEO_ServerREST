@@ -17,12 +17,12 @@ public class VilleController {
     // GET
     @RequestMapping(value = "/rechercherVille", method = RequestMethod.GET)
     @ResponseBody
-    public ArrayList<Ville> getVille(@RequestParam(required = false, value = "codePostal") String codePostal) {
+    public ArrayList<Ville> getVille(@RequestParam(required = false, value = "codeCommune") String codeCommune) {
         System.out.println(ConsoleColor.BLUE);
         System.out.println("VilleController.getVille");
-        System.out.println("codePostal = " + codePostal + ConsoleColor.RESET);
+        System.out.println("codePostal = " + codeCommune + ConsoleColor.RESET);
 
-        return villeBLOService.getInfoVille(codePostal);
+        return villeBLOService.getInfoVille(codeCommune);
     }
 
     // POST
@@ -53,11 +53,11 @@ public class VilleController {
     @CrossOrigin
     @RequestMapping(value = "/supprimerVille", method = RequestMethod.DELETE)
     @ResponseBody
-    public String deleteVille(@RequestParam(required = false, value = "codePostal") String codePostal) {
+    public String deleteVille(@RequestParam(required = false, value = "codeCommune") String codeCommune) {
         System.out.println(ConsoleColor.BLUE);
         System.out.println("VilleController.deleteVille");
-        System.out.println("codePostal = " + codePostal + ConsoleColor.RESET);
+        System.out.println("codeCommune = " + codeCommune + ConsoleColor.RESET);
 
-        return villeBLOService.deleteVille(codePostal);
+        return villeBLOService.deleteVille(codeCommune);
     }
 }
